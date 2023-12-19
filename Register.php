@@ -7,8 +7,6 @@ $dbname = "todo_list";
 $conn = new mysqli($Servername, $Username, $Password, $dbname);
 if ($conn->connect_error) {
     die("Connection Faild". $conn->connect_error);
-}else{
-    echo"Connetion Successfully";
 }
 
 // Check if the form is submitted

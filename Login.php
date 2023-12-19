@@ -6,8 +6,6 @@ $dbname = "todo_list";
 $conn = new mysqli($Servername, $Username, $Password, $dbname);
 if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
-} else {
-    echo "Connection Successfully";
 }
 
 session_start();
@@ -46,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     if ($user && password_verify($password, $user['password'])) {
         // Login successful
         $_SESSION['ID'] = $user['ID'];
-        header("Location: Index.php");
+        header("Location: dashboard.php");
         exit();
     } else {
         $error = "Invalid username or password.";
